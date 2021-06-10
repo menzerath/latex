@@ -1,2 +1,2 @@
-# latex
-Debian "sid" based Docker image for texlive
+# LaTeX
+Debian "sid" based Docker image for texlive.
