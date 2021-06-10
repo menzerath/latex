@@ -29,7 +29,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build base image
+      - name: Build image
         uses: docker/build-push-action@v2
         with:
           file: base.Dockerfile
@@ -43,15 +43,15 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
-          username: ${{ env.DH_USERNAME }}
-          password: ${{ secrets.DH_TOKEN }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
       - name: Log in to GitHub Docker Registry
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build full image
+      - name: Build image
         uses: docker/build-push-action@v2
         with:
           file: full.Dockerfile
