@@ -37,7 +37,7 @@ jobs:
         with:
           file: base.Dockerfile
           tags: ${{ env.DH_IMAGE }}:base,${{ env.GHCR_IMAGE }}:base
-          push: true
+          push: ${{ github.ref == 'refs/heads/main' }}
   build_full:
     runs-on: ubuntu-latest
     steps:
@@ -59,4 +59,4 @@ jobs:
         with:
           file: full.Dockerfile
           tags: ${{ env.DH_IMAGE }}:full,${{ env.GHCR_IMAGE }}:full,${{ env.DH_IMAGE }}:latest,${{ env.GHCR_IMAGE }}:latest
-          push: true
+          push: ${{ github.ref == 'refs/heads/main' }}
