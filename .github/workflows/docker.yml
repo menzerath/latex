@@ -19,21 +19,21 @@ jobs:
   build_base:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v2
+      - name: checkout repository
+        uses: actions/checkout@v3.0.2
+      - name: login to docker registry
+        uses: docker/login-action@v2.0.0
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
-      - name: Log in to GitHub Docker Registry
-        uses: docker/login-action@v2
+      - name: login to github registry
+        uses: docker/login-action@v2.0.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build image
-        uses: docker/build-push-action@v3
+      - name: build image
+        uses: docker/build-push-action@v3.1.0
         with:
           file: base.Dockerfile
           tags: ${{ env.DH_IMAGE }}:base,${{ env.GHCR_IMAGE }}:base
@@ -41,21 +41,21 @@ jobs:
   build_full:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v2
+      - name: checkout repository
+        uses: actions/checkout@v3.0.2
+      - name: login to docker registry
+        uses: docker/login-action@v2.0.0
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
-      - name: Log in to GitHub Docker Registry
-        uses: docker/login-action@v2
+      - name: login to github registry
+        uses: docker/login-action@v2.0.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build image
-        uses: docker/build-push-action@v3
+      - name: build image
+        uses: docker/build-push-action@v3.1.0
         with:
           file: full.Dockerfile
           tags: ${{ env.DH_IMAGE }}:full,${{ env.GHCR_IMAGE }}:full,${{ env.DH_IMAGE }}:latest,${{ env.GHCR_IMAGE }}:latest
