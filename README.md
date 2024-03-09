@@ -3,7 +3,7 @@
 ![Docker Image Size (base)](https://img.shields.io/docker/image-size/marvinmenzerath/latex/base?label=image%20size%20%28base%29)
 ![Docker Image Size (full)](https://img.shields.io/docker/image-size/marvinmenzerath/latex/full?label=image%20size%20%28full%29)
 
-Debian "sid" based Docker image for texlive.
+Debian based Docker image for texlive.
 
 ## Images
 We provide two image variants:

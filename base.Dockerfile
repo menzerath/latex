@@ -1,4 +1,4 @@
-FROM debian:sid
+FROM debian:12.5
 LABEL maintainer="Marvin Menzerath <dev@marvin.pro>"
 
 RUN apt-get update && \
