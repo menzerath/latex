@@ -33,7 +33,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: build image
-        uses: docker/build-push-action@v6.10.0
+        uses: docker/build-push-action@v6.11.0
         with:
           file: base.Dockerfile
           tags: ${{ env.DH_IMAGE }}:base,${{ env.GHCR_IMAGE }}:base
@@ -55,7 +55,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: build image
-        uses: docker/build-push-action@v6.10.0
+        uses: docker/build-push-action@v6.11.0
         with:
           file: full.Dockerfile
           tags: ${{ env.DH_IMAGE }}:full,${{ env.GHCR_IMAGE }}:full,${{ env.DH_IMAGE }}:latest,${{ env.GHCR_IMAGE }}:latest
