@@ -1,4 +1,4 @@
-FROM debian:13.3
+FROM debian:13.4
 LABEL maintainer="Marvin Menzerath <dev@marvin.pro>"
 
 RUN apt-get update && \
